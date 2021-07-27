@@ -97,7 +97,7 @@ public class out {
         int randomForAdress = 0;
 
         String randomForPhoneNumber = "";
-
+        /*
         for (int i = 0; i < 50; i++) {
 
             if (val[i][1] == 1) {
@@ -149,5 +149,103 @@ public class out {
             }
         }
 
+        */
+
+        // buraya gerekli arrayleri olustur
+
+
+        String[] izin_gunleri = {"Cumartesi-Pazar", "Pazar-Pazartesi", "Pazartesi-Cuma", "Pazartesi-Perşembe"};
+        String[] calisma_saatleri = {"09.00-17.00","08.00-20.00","20.00-08.00"};
+        String[] maaslar = {"3500","5000","2800","10000","7500"};
+        String[] gorevler = {"Hizmet Personeli","Yönetici", "Garson", "Sekreter","Muhasebeci"};
+        String[] departmanlar = {"Mutfak", "Havuz","İdari","Golf", "Disco", "Spor Salonu", "Spa"};
+
+        /*
+        for(int i=0;i<30;i++){
+
+            int randomName = (int) (Math.random() * namesList.length);
+            int randomSurname = (int) (Math.random() * namesList.length);
+            int randomYear = (int) (Math.random() * 80 + 1940);
+            int randomDay = (int) (Math.random() * 30 + 1);
+            int randomMonth = (int) (Math.random() * 12 + 1);
+            Random r = new Random();
+            String email = namesList[randomName][0] + "@gmail.com";
+            int randomBloodType = (int) (Math.random() * bloodList.length);
+            int randomMaas = (int) (Math.random() * maaslar.length);
+            int randomGorev = (int) (Math.random() * gorevler.length);
+            int randomDepartman = (int) (Math.random() * departmanlar.length);
+            int randomCalismaSaati = (int) (Math.random() * calisma_saatleri.length);
+            int randomIzinGunleri = (int) (Math.random() * izin_gunleri.length);
+            randomForAdress = (int) (Math.random() * adressList.length);
+            randomForPhoneNumber = num[r.nextInt(5)] + (int) ((Math.random() + 1) * 100000000);
+        
+            String date = "'" + randomDay + "/" + randomMonth + "/" + randomYear + "'" ;
+            
+            System.out.println("[" + i + ", " + "null" + ", " + "null" + ", "
+            + kimlikNo() + ", '" + namesList[randomName][0] + "', '" + namesList[randomSurname][1] + "', "
+            + date + ", " + (2020 - randomYear) + ", '" + randomForPhoneNumber + "', '" + adressList[randomForAdress] + "', '"
+            + email + "', '" + bloodList[randomBloodType] + "', " + maaslar[randomMaas] + ", '" + gorevler[randomGorev] + "', '" + departmanlar[randomDepartman]+ "', '"
+             + calisma_saatleri[randomCalismaSaati].substring(0,5) +  "', '" + calisma_saatleri[randomCalismaSaati].substring(6) +"', '"   + izin_gunleri[randomIzinGunleri] + "'],");
+            
+            
+
+        }
+        */
+
+        /*
+        int[] yatak_sayisi= {1,2,3,4,5,6};
+        String[] oda_tipi = {"Normal", "Deluxe", "Suite", "King Suite", "Ultra Deluxe", "Family Room"};
+        int[] fiyat = {500,750,1000,2000,4000,15000};
+        int[] kat = {1,2,3,4,5};
+        String[] cephe = {"Kuzey", "Güney", "Doğu", "Batı",};
+
+        for(int i=0;i<75;i++){
+
+            int rezervasyon_no = (int)(Math.random() * 5000) + 250;
+            int randomYatakSayisi = (int)( Math.random() * yatak_sayisi.length);
+            int randomOdaTipi = (int)( Math.random() * oda_tipi.length);
+            int randomFiyat = (int)( Math.random() * fiyat.length);
+            int randomKat = (int)( Math.random() * kat.length);
+            int randomCephe = (int)( Math.random() * cephe.length);
+
+            System.out.println("[" + i + ", " + rezervasyon_no + ", " + yatak_sayisi[randomYatakSayisi] + ", '"
+            + oda_tipi[randomOdaTipi] + "', " + fiyat[randomFiyat] + ", " + kat[randomKat] + ", '"
+            + cephe[randomCephe] + "'],");
+
+        }
+        */
+
+        int[] ucret = {0,50,100,250,500,1000};
+        String[] aktivite = {"Su Topu", "Dans Gösterisi", "Egzotik Masaj", "Paintball", "Golf","Diving Yarismasi"};
+
+        for(int i=0;i<10;i++){
+
+            int randomDay = (int) (Math.random() * 30 + 1);
+            int randomMonth = (int) (Math.random() * 12 + 1);
+            int randomYear = (int) (Math.random() * 80 + 1940);
+            int randomAdditionalDay = (int) (Math.random() * 5);
+            String date = "'" + randomDay + "/" + randomMonth + "/" + randomYear + "'" ;
+            String end_date = "'" + (randomDay+ randomAdditionalDay) + "/" + randomMonth + "/" + randomYear + "'" ;
+            int randomAktivite = (int) (Math.random() * aktivite.length);
+            int randomUcret = (int) (Math.random() * ucret.length);
+            int musteri_no = (int) (Math.random() * 50);
+
+
+            System.out.println("[" + i + ", " + musteri_no + ", " + date + ", "
+            + end_date + ", '" + aktivite[randomAktivite] + "', " + ucret[randomUcret] + "],");
+           
+        }
+
     }
+
+    public static String kimlikNo(){
+        
+        String str = "";
+        for(int i=0;i<10;i++)
+            str = str + (int) (Math.random() * 10);
+        
+        return str;
+    }
+
+    
 }
