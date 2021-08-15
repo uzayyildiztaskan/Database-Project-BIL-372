@@ -340,7 +340,7 @@ color: rgb(255, 255, 255);</string>
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_20">
+    <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
        <x>5</x>
@@ -356,7 +356,7 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_21">
+    <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
        <x>265</x>
@@ -372,7 +372,7 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_25">
+    <widget class="QLineEdit" name="lineEdit_3">
      <property name="geometry">
       <rect>
        <x>5</x>
@@ -388,7 +388,7 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_26">
+    <widget class="QLineEdit" name="lineEdit_5">
      <property name="geometry">
       <rect>
        <x>5</x>
@@ -404,7 +404,7 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_27">
+    <widget class="QLineEdit" name="lineEdit_4">
      <property name="geometry">
       <rect>
        <x>265</x>
@@ -420,7 +420,7 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_28">
+    <widget class="QLineEdit" name="lineEdit_6">
      <property name="geometry">
       <rect>
        <x>265</x>
@@ -958,7 +958,7 @@ background-color: rgb(255, 71, 65);</string>
       <string>Cancel</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_16">
+    <widget class="QTextEdit" name="textEdit_3">
      <property name="geometry">
       <rect>
        <x>20</x>
