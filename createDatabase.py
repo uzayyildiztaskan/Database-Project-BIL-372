@@ -43,7 +43,7 @@ mycursor.execute("CREATE TABLE IF NOT EXISTS oda(oda_no INT PRIMARY KEY, rezerva
 
 print("Table oda active")
 
-mycursor.execute("CREATE TABLE IF NOT EXISTS rezervasyon(rezervasyon_no INT PRIMARY KEY, musteri_no INT, oda_sayisi INT NOT NULL, kisi_sayisi INT NOT NULL, baslangic_tarihi DATE NOT NULL, bitis_tarihi DATE NOT NULL, fiyat INT NOT NULL)")
+mycursor.execute("CREATE TABLE IF NOT EXISTS rezervasyon(rezervasyon_no INT PRIMARY KEY, oda_sayisi INT NOT NULL, kisi_sayisi INT NOT NULL, baslangic_tarihi DATE NOT NULL, bitis_tarihi DATE NOT NULL, fiyat INT NOT NULL)")
 
 print("Table rezervasyon active")
 
@@ -69,8 +69,6 @@ mycursor.execute(
     "ALTER TABLE personel ADD FOREIGN KEY (tesis_no) REFERENCES tesis(tesis_no)")
 mycursor.execute(
     "ALTER TABLE oda ADD FOREIGN KEY (rezervasyon_no) REFERENCES rezervasyon(rezervasyon_no)")
-mycursor.execute(
-    "ALTER TABLE rezervasyon ADD FOREIGN KEY (musteri_no) REFERENCES musteri(musteri_no)")
 mycursor.execute(
     "ALTER TABLE tesis ADD FOREIGN KEY (aktivite_no) REFERENCES aktivite(aktivite_no)")
 mycursor.execute(

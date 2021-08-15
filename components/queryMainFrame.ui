@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1001</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(229, 229, 229);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>250</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>22</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Query</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>0</y>
+       <width>250</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>22</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Insertion</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>100</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Bireysel Müşteri Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>185</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Kurumsal Müşteri Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>270</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Personel Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>355</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Oda Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>440</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Rezervasyon Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>525</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Tesis Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>610</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Ticari Tesis Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_10">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>695</y>
+       <width>200</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(163, 163, 163);</string>
+     </property>
+     <property name="text">
+      <string>Aktivite Sorgula</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>525</x>
+       <y>20</y>
+       <width>460</width>
+       <height>240</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>280</y>
+       <width>100</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>133</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>133</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>133</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>56</red>
+           <green>116</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(56, 116, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Execute</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>525</x>
+       <y>350</y>
+       <width>460</width>
+       <height>420</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>0</y>
+       <width>20</width>
+       <height>811</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
