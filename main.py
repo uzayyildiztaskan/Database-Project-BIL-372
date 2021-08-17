@@ -1,5 +1,3 @@
-from logging import error
-from os import terminal_size
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
@@ -635,16 +633,14 @@ class rezervasyonInsertionWindow(QMainWindow):
 
     def insert(self):
         rezervasyonNo = self.lineEdit.text()
-        odaSayisi = self.lineEdit_2.text()
-        kisiSayisi = self.lineEdit_3.text()
-        baslangicTarihi = self.lineEdit_4.text()
-        bitisTarihi = self.lineEdit_5.text()
-        fiyat = self.lineEdit_6.text()
+        fiyat = self.lineEdit_2.text()
+        baslangicTarihi = self.lineEdit_3.text()
+        bitisTarihi = self.lineEdit_4.text()
 
         try:
-            sql = "INSERT INTO rezervasyon VALUES (%s, %s, %s, %s, %s, %s)"
-            values = [rezervasyonNo, odaSayisi,
-                      kisiSayisi, baslangicTarihi, bitisTarihi, fiyat]
+            sql = "INSERT INTO rezervasyon VALUES (%s, %s, %s, %s)"
+            values = [rezervasyonNo, baslangicTarihi,
+                      bitisTarihi, fiyat]
             mycursor.execute(sql, values)
             con.commit()
             self.clearFields()
@@ -671,8 +667,6 @@ class rezervasyonInsertionWindow(QMainWindow):
         self.lineEdit_2.setText("")
         self.lineEdit_3.setText("")
         self.lineEdit_4.setText("")
-        self.lineEdit_5.setText("")
-        self.lineEdit_6.setText("")
 
     def clearTextAreas(self):
         self.textEdit.setPlainText("")
@@ -1019,10 +1013,10 @@ class bireyselQueryWindow(QMainWindow):
         odaNo = self.lineEdit_3.text()
         if odaNo != "":
             if changed == False:
-                whereCondition = whereCondition + "oda_no = " + odaNo
+                whereCondition = whereCondition + "bireysel_musteri.oda_no = " + odaNo
                 changed = True
             else:
-                whereCondition = whereCondition + " AND oda_no = " + odaNo
+                whereCondition = whereCondition + " AND bireysel_musteri.oda_no = " + odaNo
 
         isim = self.lineEdit_4.text()
         if isim != "":
@@ -1181,7 +1175,7 @@ class kurumsalQueryWindow(QMainWindow):
 
         musteriNo = self.lineEdit.text()
         if musteriNo != "":
-            whereCondition = whereCondition + "musteri_no = " + musteriNo
+            whereCondition = whereCondition + "kurumsal_musteri.musteri_no = " + musteriNo
             changed = True
 
         kurumTipi = self.lineEdit_2.text()
@@ -1403,13 +1397,13 @@ class PersonelQueryWindow(QMainWindow):
             calismaSaatleriBaslangic, calismaSaatleriBitis = calismaSaatleri.split(
                 "-")
             if changed == False:
-                whereCondition = whereCondition + "calisma_saati_baslangic = " + \
-                    calismaSaatleriBaslangic + " AND calisma_saati_bitis = \"" + \
+                whereCondition = whereCondition + "calisma_saati_baslangic = \"" + \
+                    calismaSaatleriBaslangic + "\"" + " AND calisma_saati_bitis = \"" + \
                     calismaSaatleriBitis + "\""
                 changed = True
             else:
-                whereCondition = whereCondition + " AND calisma_saati_baslangic = " + \
-                    calismaSaatleriBaslangic + " AND calisma_saati_bitis = \"" + \
+                whereCondition = whereCondition + " AND calisma_saati_baslangic = \"" + \
+                    calismaSaatleriBaslangic + "\"" + " AND calisma_saati_bitis = \"" + \
                     calismaSaatleriBitis + "\""
 
         izinGunleri = self.lineEdit_6.text()
@@ -1722,8 +1716,11 @@ class rezervasyonQueryWindow(QMainWindow):
 
     def query(self):
 
-        sql = "SELECT * FROM rezervasyon "
-        whereCondition = "WHERE "
+        selectionAtts = "*"
+        select = "SELECT "
+        fromRez = " FROM rezervasyon "
+        whereCondition = " WHERE "
+        groupCondition = ""
         changed = False
         changedOda = False
 
@@ -1734,27 +1731,28 @@ class rezervasyonQueryWindow(QMainWindow):
 
         odaSayisi = self.lineEdit_2.text()
         if odaSayisi != "":
+            selectionAtts = "rezervasyon.rezervasyon_no, rezervasyon.baslangic_tarihi, rezervasyon.bitis_tarihi, rezervasyon.fiyat"
+            groupCondition = " GROUP BY rezervasyon.rezervasyon_no HAVING COUNT(*) = " + \
+                odaSayisi
+            fromRez = fromRez + ", oda"
+            changedOda = True
             if changed == False:
-                whereCondition = whereCondition + "oda_sayisi = " + odaSayisi
+                whereCondition = whereCondition + \
+                    "rezervasyon.rezervasyon_no = oda.rezervasyon_no"
                 changed = True
             else:
                 whereCondition = whereCondition + \
-                    " AND oda_sayisi = " + odaSayisi
-
-        kisiSayisi = self.lineEdit_3.text()
-        if kisiSayisi != "":
-            if changed == False:
-                whereCondition = whereCondition + "kisi_sayisi = " + kisiSayisi
-                changed = True
-            else:
-                whereCondition = whereCondition + " AND kisi_sayisi = " + kisiSayisi
-
-        odaTipi = self.lineEdit_4.text()
+                    " AND rezervasyon.rezervasyon_no = oda.rezervasyon_no"
+        odaTipi = self.lineEdit_3.text()
         if odaTipi != "":
 
-            sql = sql + ", oda "
+            if changedOda == False:
+                fromRez = fromRez + ", oda "
 
             statement = "oda.rezervasyon_no = rezervasyon.rezervasyon_no AND "
+
+            if(changedOda == True):
+                statement = ""
 
             changedOda = True
 
@@ -1765,7 +1763,7 @@ class rezervasyonQueryWindow(QMainWindow):
                 whereCondition = whereCondition + \
                     " AND " + statement + "oda_tipi = \"" + odaTipi + "\""
 
-        fiyat = self.lineEdit_5.text()
+        fiyat = self.lineEdit_4.text()
         if fiyat != "":
             if changed == False:
                 whereCondition = whereCondition + "rezervasyon.fiyat = " + fiyat
@@ -1773,10 +1771,10 @@ class rezervasyonQueryWindow(QMainWindow):
             else:
                 whereCondition = whereCondition + " AND rezervasyon.fiyat = " + fiyat
 
-        kat = self.lineEdit_6.text()
+        kat = self.lineEdit_5.text()
         if kat != "":
             if changedOda == False:
-                sql = sql + ", oda "
+                fromRez = fromRez + ", oda "
 
             statement = "oda.rezervasyon_no = rezervasyon.rezervasyon_no AND "
             if(changedOda == True):
@@ -1791,7 +1789,7 @@ class rezervasyonQueryWindow(QMainWindow):
                 whereCondition = whereCondition + \
                     " AND " + statement + "kat = " + kat
 
-        baslangicTarihi = self.lineEdit_7.text()
+        baslangicTarihi = self.lineEdit_6.text()
         if baslangicTarihi != "":
             if changed == False:
                 whereCondition = whereCondition + "baslangic_tarihi = \"" + baslangicTarihi + "\""
@@ -1800,7 +1798,7 @@ class rezervasyonQueryWindow(QMainWindow):
                 whereCondition = whereCondition + \
                     " AND baslangic_tarihi = \"" + baslangicTarihi + "\""
 
-        bitisTarihi = self.lineEdit_8.text()
+        bitisTarihi = self.lineEdit_7.text()
         if bitisTarihi != "":
             if changed == False:
                 whereCondition = whereCondition + "bitis_tarihi = \"" + bitisTarihi + "\""
@@ -1808,7 +1806,7 @@ class rezervasyonQueryWindow(QMainWindow):
             else:
                 whereCondition = whereCondition + " AND bitis_tarihi = \"" + bitisTarihi + "\""
 
-        sqlComplete = sql + whereCondition
+        sqlComplete = select + selectionAtts + fromRez + whereCondition + groupCondition
 
         print(sqlComplete)
 
@@ -1850,7 +1848,6 @@ class rezervasyonQueryWindow(QMainWindow):
         self.lineEdit_5.setText("")
         self.lineEdit_6.setText("")
         self.lineEdit_7.setText("")
-        self.lineEdit_8.setText("")
 
     def clearTextAreas(self):
         self.textEdit.setPlainText("")

@@ -356,7 +356,7 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="lineEdit_3">
      <property name="geometry">
       <rect>
        <x>5</x>
@@ -375,40 +375,8 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLineEdit" name="lineEdit_4">
      <property name="geometry">
       <rect>
-       <x>5</x>
-       <y>270</y>
-       <width>230</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
        <x>265</x>
        <y>190</y>
-       <width>230</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>265</x>
-       <y>270</y>
        <width>230</width>
        <height>30</height>
       </rect>
@@ -433,37 +401,11 @@ color: rgb(255, 255, 255);</string>
       <string>Rezervasyon Numarası</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_28">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>170</y>
-       <width>111</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Oda Sayısı</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_29">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>170</y>
-       <width>111</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Kişi Sayısı</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_30">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>250</y>
+       <x>5</x>
+       <y>170</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -475,8 +417,8 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLabel" name="label_31">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>250</y>
+       <x>265</x>
+       <y>170</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -489,7 +431,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>105</x>
-       <y>325</y>
+       <y>260</y>
        <width>100</width>
        <height>50</height>
       </rect>
@@ -711,7 +653,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>325</y>
+       <y>260</y>
        <width>100</width>
        <height>50</height>
       </rect>
@@ -933,9 +875,9 @@ background-color: rgb(255, 71, 65);</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>395</y>
+       <y>345</y>
        <width>471</width>
-       <height>376</height>
+       <height>426</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -945,7 +887,7 @@ background-color: rgb(255, 71, 65);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
+    <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
        <x>265</x>
